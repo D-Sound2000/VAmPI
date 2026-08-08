@@ -89,12 +89,12 @@ paths:
     get:
       tags:
         - users
-      summary: Retrieves all details for all users
-      description: Displays all details for all users
+      summary: Retrieves all users
+      description: Displays all users with basic information
       operationId: api_views.users.debug
       responses:
         '200':
-          description: See all details of the users
+          description: See basic info about all users
           content:
             application/json:
               schema:
@@ -105,15 +105,9 @@ paths:
                     items:
                       type: object
                       properties:
-                        admin:
-                          type: boolean
-                          example: false
                         email:
                           type: string
                           example: 'mail1@mail.com'
-                        password:
-                          type: string
-                          example: 'pass1'
                         username:
                           type: string
                           example: 'name1'
@@ -211,7 +205,7 @@ paths:
                     example: 'fail'
                   message:
                     type: string
-                    example: 'Password is not correct for the given username.'
+                    example: 'Username or Password Incorrect!'
   /me:
     get:
         security:
